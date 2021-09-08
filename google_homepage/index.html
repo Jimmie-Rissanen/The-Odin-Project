@@ -6,6 +6,7 @@
             *{
                 margin:0;
                 padding:0;
+                font-size: small;
             }
             wrapper {
                 display:flex;
@@ -13,9 +14,22 @@
                 height: 100vh;
             }
             header {
-                height: 3rem;
+                height: 2rem;
+            }
+            nav {
+                display:flex;
+                justify-content: space-between;
+            }
+            nav .btn {
+                margin:1rem;
+                background-color: #ffffff;
+            }
+            .sign-in-btn {
+                color:#ffffff;
+                background-color: #4583ed;
+                height:fit-content;
+                margin:0;
                 
-               
             }
             main {
                 height:100%;
@@ -57,21 +71,20 @@
                 height: 3rem;
                 Background-color: #f2f2f2;
                 display:flex;
-                background-color: brown;
+                justify-content: space-between;
                 
             }
             footer .btn {
                 height:auto;
+                margin:0;
             }
             .right-align {
-                background-color: aqua;
-                jus
-                justify-content:end;
-                align-items:end;
+                height:100%;
+                display:flex;
             }
             .left-align {
-                justify-self: start;
-                background-color: blue;
+                height:100%;
+                display:flex;
             }
         </style>    
     </head>
@@ -80,7 +93,17 @@
             <!--Make a simple clone. Use the search funkcion to get to a hipster ipsum search result. from there all linkes lead to the hipster ipsum website.-->
             <header>
                 <nav>
+                    <div class="left-align">
+                        <button class="btn">About</button>
+                        <button class="btn">Store</button>
+                    </div>
+                    <div class="right-align">
+                        <button class="btn">Gmail</button>
+                        <button class="btn">Images</button>
+                        <button class="btn">Settings</button>
+                        <button  class="sign-in-btn">Sign in</button>
 
+                    </div>
                 </nav>
             </header>
             <main>
