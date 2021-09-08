@@ -22,8 +22,36 @@
                 display:flex;
                 flex-direction:column;
                 justify-content: center;
-                align-items:center;
-                
+                align-items:center;               
+            }
+            img {
+                width: 325px;
+            }
+            form {
+                display:flex;
+                flex-direction:column;
+                justify-content: center;
+            }
+            .button-div {
+                display:flex;
+                justify-content: center;
+            }
+            form input {
+                width:500px;
+                padding:0.5rem;
+                border-radius:50px;
+                border:none;
+                box-shadow: 2px 2px 2px 2px lightgray;
+            }
+            form button {
+                padding:.5rem;
+                background-color: #f2f2f2;
+                color:#5F6368;
+                margin: 2rem .8rem 0 0;
+                border:none;
+                border-radius: 4px;
+                padding:0 16px;
+                height: 36px;
             }
             footer {
                 height: 4rem;
@@ -44,6 +72,10 @@
                 <img id="logo" src="images/logo.png" alt="logo">
                 <form>
                     <input type="text">
+                    <div class="button-div">
+                        <button>Google Search</button>
+                        <button>I'm Feeling Lucky</button>
+                    </div>
                 </form>
             </main>
             <footer>
