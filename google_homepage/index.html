@@ -3,23 +3,53 @@
     <head>
         <title>My google replica</title>
         <style>
-            p {
-                color: red;
-                size: 50;
+            *{
+                margin:0;
+                padding:0;
             }
-            img {
-                size: 50px;
+            wrapper {
+                display:flex;
+                flex-direction:column;
+                height: 100vh;
+            }
+            header {
+                height: 4rem;
+                border:2px solid salmon;
+               
+            }
+            main {
+                height:100%;
+                display:flex;
+                flex-direction:column;
+                justify-content: center;
+                align-items:center;
+                
+            }
+            footer {
+                height: 4rem;
+                border:2px solid salmon;
+                
             }
         </style>    
     </head>
     <body>
-        <img id="logo" src="images/googlelogo.png" alt="google logo">    
-        <p>This is google.com</p>
-        <ul>
-            <li>fist item</li>
-            <li>second item</li>
-            <li>third item</li>
-        </ul>        
+        <wrapper>                        
+            <!--Make a simple clone. Use the search funkcion to get to a hipster ipsum search result. from there all linkes lead to the hipster ipsum website.-->
+            <header>
+                <nav>
+
+                </nav>
+            </header>
+            <main>
+                <img id="logo" src="images/logo.png" alt="logo">
+                <form>
+                    <input type="text">
+                </form>
+            </main>
+            <footer>
+
+            </footer>
+        </wrapper>    
     </body>
 
 </html>
