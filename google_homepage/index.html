@@ -13,8 +13,8 @@
                 height: 100vh;
             }
             header {
-                height: 4rem;
-                border:2px solid salmon;
+                height: 3rem;
+                
                
             }
             main {
@@ -43,7 +43,7 @@
                 border:none;
                 box-shadow: 2px 2px 2px 2px lightgray;
             }
-            form button {
+            .btn {
                 padding:.5rem;
                 background-color: #f2f2f2;
                 color:#5F6368;
@@ -54,9 +54,24 @@
                 height: 36px;
             }
             footer {
-                height: 4rem;
-                border:2px solid salmon;
+                height: 3rem;
+                Background-color: #f2f2f2;
+                display:flex;
+                background-color: brown;
                 
+            }
+            footer .btn {
+                height:auto;
+            }
+            .right-align {
+                background-color: aqua;
+                jus
+                justify-content:end;
+                align-items:end;
+            }
+            .left-align {
+                justify-self: start;
+                background-color: blue;
             }
         </style>    
     </head>
@@ -73,13 +88,22 @@
                 <form>
                     <input type="text">
                     <div class="button-div">
-                        <button>Google Search</button>
-                        <button>I'm Feeling Lucky</button>
+                        <button class="btn">Google Search</button>
+                        <button class="btn">I'm Feeling Lucky</button>
                     </div>
                 </form>
             </main>
             <footer>
-
+                <div class="left-align">
+                    <button class="btn">Advertising</button>
+                    <button class="btn">Business</button>
+                    <button class="btn">How Search works</button>
+                </div>
+                <div class="right-align">
+                    <button class="btn">Privacy</button>
+                    <button class="btn">Terms</button>
+                    <button class="btn">Settings</button>
+                </div>
             </footer>
         </wrapper>    
     </body>
