@@ -1,0 +1,18 @@
+* {
+    margin:0;
+}
+#wrapper {
+    display: flex;
+    flex-direction:column;
+    height:100vh;
+}
+nav, header {
+    background-color: #1F2937;
+}
+.content-block {
+    flex:1;
+    
+}
+.quote {
+    background-color: #E5E7EB;
+}
