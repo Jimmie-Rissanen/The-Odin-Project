@@ -1,22 +1,26 @@
 * {
     margin:0;
+    font-family: "Raleway", sans-serif;
 }
 #wrapper {
     display: flex;
     flex-direction:column;
-    height:100vh;
+    height:100%;
 }
-nav, header {
+nav, header ,footer{
     background-color: #1F2937;
     color:#F9FAF8;
+    padding:2rem;
 }
-nav {
+.links {
+    
+}
+nav, footer {
     display:flex;
     align-items:center;
     justify-content:space-evenly;
-    height: 50px;
 }
-header,footer{
+header, footer{
     display:flex;
     justify-content: center;
     align-items:center;
@@ -24,7 +28,7 @@ header,footer{
     flex:1;
 }
 .header-block {
-    margin: 2rem;
+    padding:2rem;
     height:150px;
     width:300px;
 }
@@ -41,7 +45,7 @@ button {
     display:flex;
 }
 .random-box {
-    height:200px;
+    height:auto;
     width:100px;
 }
 .small-box {
@@ -56,9 +60,8 @@ button {
     flex-direction:column;
     justify-content: center;
     align-items: center;
-}
-.content-block h2 {
-    margin:1rem;
+    height:auto;
+    padding:3rem;
 }
 .quote {
     background-color: #E5E7EB;
@@ -67,6 +70,7 @@ button {
     width:450px;
     font:36px #1F2937;
     font-style:italic; 
+    padding:2rem;
 }
 .fig figcaption {
     text-align: right;
