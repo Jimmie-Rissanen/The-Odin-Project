@@ -13,7 +13,15 @@ nav, header ,footer{
     padding:2rem;
 }
 .links {
+    display:flex;
+    justify-content:end;
+    width:100%
     
+}
+.links a {
+    padding-right: 3rem;
+    color:#F9FAF8;
+    text-decoration: none;
 }
 nav, footer {
     display:flex;
@@ -32,17 +40,31 @@ header, footer{
     height:150px;
     width:300px;
 }
+.header-block h1 {
+    padding-bottom:1rem;
+}
+.img-div {
+    border:2px solid #F9FAF8;
+    border-radius:10px;
+    height:150px;
+    width:300px;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
 button {
     background-color: #3882F6;
     border-radius: 4px;
     border:none;
-    padding: 0 1rem 0 1rem;
+    padding: .2 1rem .2 1rem;
     margin-top:.5rem;
     color:#F9FAF8;
+    height:25px;
 
 }
 .papa-box {
     display:flex;
+    padding-top:1rem;
 }
 .random-box {
     height:auto;
@@ -53,6 +75,7 @@ button {
     width:80px;
     border:2px solid #3882F6;
     border-radius:10px;
+
 }
 .content-block {
     flex:1;
@@ -87,4 +110,5 @@ button {
 }
 .footer-block button {
     border: 1px solid #F9FAF8;
+    height: 35px;
 }
