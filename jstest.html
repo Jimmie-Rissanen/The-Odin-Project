@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>jstest</title>
-        <meta charset="UTF-8">
-        <style>
-            /*CSS*/
-        </style>
-    </head>
-    <body><!--HTML-->
-        <script>
-            //Java Script
-          let answere = prompt("What is the official name of java script?")
+<head>
+  <meta charset="utf-8">
+  <title>Function scope example</title>
+</head>
+<body>
 
-          if (answere == "ECMAScript"){
-              alert("Right!")
-          } else {
-              alert("Wrong")
-          }
-          let result = (a + b < 4) ? "below" : "over";
-        </script>
-    </body>
+  <script>
+    let x = 1;
+
+    function a() {
+      let y = 2;
+      output(y);
+    }
+
+    function b() {
+      let z = 3;
+      output(z);
+    }
+
+    function output(value) {
+      const para = document.createElement('p');
+      document.body.appendChild(para);
+      para.textContent = 'Value: ' + value;
+    }
+  </script>
+</body>
 </html>
