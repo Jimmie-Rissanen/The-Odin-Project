@@ -7,23 +7,15 @@
 <body>
 
   <script>
-    let x = 1;
-
-    function a() {
-      let y = 2;
-      output(y);
-    }
-
-    function b() {
-      let z = 3;
-      output(z);
-    }
-
-    function output(value) {
-      const para = document.createElement('p');
-      document.body.appendChild(para);
-      para.textContent = 'Value: ' + value;
-    }
+  let age = 10;
+  function checkAge(age) {
+  if (age > 18) {
+    return true;
+  } else {
+    return confirm('Did parents allow you?');
+  }
+}
+console.log(checkAge(age));
   </script>
 </body>
 </html>
