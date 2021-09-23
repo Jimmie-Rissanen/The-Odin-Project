@@ -7,15 +7,28 @@
 <body>
 
   <script>
-  let age = 10;
-  function checkAge(age) {
-  if (age > 18) {
-    return true;
-  } else {
-    return confirm('Did parents allow you?');
-  }
-}
-console.log(checkAge(age));
+    let add7 = n => n+7;
+
+    console.log(add7(7));
+
+    function multiply (a,b) {
+      return a * b;
+    }
+    
+    console.log(multiply(5,4));
+
+    let capitalize = function(string) {
+      let lowerCaseString = string.toLowerCase();
+      let firstLetter = lowerCaseString.charAt(0);
+      return lowerCaseString.replace(firstLetter, firstLetter.toUpperCase());
+    }
+
+    console.log(capitalize("jHHHHHHH"));
+
+    let lastLetter = (string) => string.charAt(string.length -1);
+
+    console.log(lastLetter("Hola banolla"));
+
   </script>
 </body>
 </html>
