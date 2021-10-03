@@ -1,0 +1,17 @@
+* {
+    margin:0;
+    padding:0;
+}
+.wrapper {
+    
+}
+.left-side {
+    height:100vh;
+    width:50wv;
+    background-color: aqua;
+}
+.right-side {
+    height:100vh;
+    width:50wv;
+    background-color:blue;
+}
