@@ -10,26 +10,25 @@ function computerPlay(){
     }
 }
 
-// Make one round and evalutate the winner.
+// Make one round and evalutate the winner and returns an array with a message and a number for keeping score.
 
 function playRound (playerSelection, computerSelection) {
     let player = playerSelection.toLowerCase();
     let computer = computerSelection.toLowerCase();
-
     switch (true) {
         
         case player == "rock" && computer == "scissors":
-            return `You won! ${player} beats ${computer}.`; 
+            return [`You won! ${player} beats ${computer}.`, 1]; 
 
         case player == "paper" && computer == "rock":
-            return `You won! ${player} beats ${computer}.`; 
+            return [`You won! ${player} beats ${computer}.`, 1]; 
 
         case player == "scissors" && computer == "paper":
-            return `You won! ${player} beats ${computer}.`; 
+            return [`You won! ${player} beats ${computer}.`, 1]; 
         case player == computer:
-            return `That is a tie. ${player} against ${computer}.`
+            return [`That is a tie. ${player} against ${computer}.`, 2];
         default:
-            return `You lost! ${computer} beats ${player}!`;
+            return [`You lost! ${computer} beats ${player}!`, 0];
     }
 }
 
@@ -37,9 +36,21 @@ function playRound (playerSelection, computerSelection) {
 
 function game () {
     let count = 0;
-    wile (count < 5) {
-        // make the user do input and run the functions. add 1 to count. evalutate the winner and console log it.
+    let userPoints = 0;
+    let computerPoints = 0;
+    while (count < 5) {        
+        let userInput = prompt("Best out of 5. Rock, Paper or Scissors?")
+        let round = playRound(userInput, computerPlay());
+        if (round[1] == 1) {
+            userPoints++;
+        } else if (round[1] == 0){
+            computerPoints++;
+        }
+        console.log(round[0]);
+        count ++;
     }
+    console.log(`User: ${userPoints} Computer: ${computerPoints}`);
 }
 
-console.log(playRound("rOCK", computerPlay()));
+
+game();
