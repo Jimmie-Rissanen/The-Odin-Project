@@ -1,3 +1,13 @@
+const choiseButtons = document.querySelectorAll('.card');
+choiseButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        console.log(e.currentTarget.innerText);
+    })
+})
+const startGameButton = document.querySelector('.startButton');
+console.log(startGameButton)
+startGameButton.addEventListener('click', (e) => game());
+
 // Make a random output 
 function computerPlay(){
     let randomNumber = Math.floor(Math.random() * 3);
@@ -39,7 +49,7 @@ function game () {
     let userPoints = 0;
     let computerPoints = 0;
     while (count < 5) {        
-        let userInput = prompt("Best out of 5. Rock, Paper or Scissors?")
+       // let userInput = ;
         let round = playRound(userInput, computerPlay());
         if (round[1] == 1) {
             userPoints++;
@@ -53,4 +63,4 @@ function game () {
 }
 
 
-game();
+//game();
