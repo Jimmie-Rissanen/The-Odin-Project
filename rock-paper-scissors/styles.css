@@ -10,6 +10,16 @@ wrapper {
     background-color: goldenrod;
     height:100vh;
 }
+main {
+    background-color: blueviolet;
+    display: grid;
+    
+
+}
+.card {
+    height: 100px;
+    width: 100px;
+}
 .container {
     display:flex;
     justify-content: center;
@@ -18,6 +28,5 @@ wrapper {
 header {
     width:100vw;
     height:100px;
-    
     background-color: mistyrose;
 }
