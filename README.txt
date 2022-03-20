@@ -1,0 +1,1 @@
+This is a collection of all the projects that I work on during The Odin Project. 
