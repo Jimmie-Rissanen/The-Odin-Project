@@ -11,14 +11,24 @@ wrapper {
     height:100vh;
 }
 main {
-    background-color: blueviolet;
-    display: grid;
-    
-
+   background-color: whitesmoke;
+   max-width: 80vw;
+}
+.choises {
+    display: flex;
+    flex-direction: row;
 }
 .card {
-    height: 100px;
-    width: 100px;
+    height: 200px;
+    width: 200px;
+    margin: 20px;
+    border: black solid 2px;
+    text-justify: center;
+}
+.results {
+    height: 50px;
+    width:300;
+    background-color: aquamarine;
 }
 .container {
     display:flex;
