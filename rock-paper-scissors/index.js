@@ -1,12 +1,6 @@
-const choiseButtons = document.querySelectorAll('.card');
-choiseButtons.forEach(button => {
-    button.addEventListener('click', (e) => {
-        console.log(e.currentTarget.innerText);
-    })
-})
-const startGameButton = document.querySelector('.startButton');
-console.log(startGameButton)
-startGameButton.addEventListener('click', (e) => game());
+const chooseButton = document.querySelectorAll('.card');
+const displayResultArea = document.querySelector('.displayResultArea');
+chooseButton.forEach(button => button.addEventListener('click', startGame));
 
 // Make a random output 
 function computerPlay(){
@@ -20,7 +14,19 @@ function computerPlay(){
     }
 }
 
-// Make one round and evalutate the winner and returns an array with a message and a number for keeping score.
+function startGame(e){
+        displayResultArea.textContent = '';
+        const round = playRound(e.currentTarget.innerText, computerPlay());
+        const result = document.createElement('p');
+        displayResultArea.appendChild(result);
+        result.innerText = round[0]
+}
+
+function countScore(score){
+    
+}
+
+// Make one round and evaluate the winner and return an array with a message and a number for keeping score.
 
 function playRound (playerSelection, computerSelection) {
     let player = playerSelection.toLowerCase();
@@ -42,25 +48,4 @@ function playRound (playerSelection, computerSelection) {
     }
 }
 
-// Make a game that is 5 rounds and return the winner.
 
-function game () {
-    let count = 0;
-    let userPoints = 0;
-    let computerPoints = 0;
-    while (count < 5) {        
-       // let userInput = ;
-        let round = playRound(userInput, computerPlay());
-        if (round[1] == 1) {
-            userPoints++;
-        } else if (round[1] == 0){
-            computerPoints++;
-        }
-        console.log(round[0]);
-        count ++;
-    }
-    console.log(`User: ${userPoints} Computer: ${computerPoints}`);
-}
-
-
-//game();
