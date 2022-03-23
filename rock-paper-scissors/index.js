@@ -1,6 +1,10 @@
 const chooseButton = document.querySelectorAll('.card');
+chooseButton.forEach(button => button.addEventListener('click', displayResult));
+
 const displayResultArea = document.querySelector('.displayResultArea');
-chooseButton.forEach(button => button.addEventListener('click', startGame));
+
+const gameStartButton = document.querySelector('.gameStartButton');
+gameStartButton.addEventListener('click', displayResult);
 
 // Make a random output 
 function computerPlay(){
@@ -14,12 +18,8 @@ function computerPlay(){
     }
 }
 
-function startGame(e){
-        displayResultArea.textContent = '';
-        const round = playRound(e.currentTarget.innerText, computerPlay());
-        const result = document.createElement('p');
-        displayResultArea.appendChild(result);
-        result.innerText = round[0]
+function displayResult(e){
+       
 }
 
 function countScore(score){
@@ -31,6 +31,11 @@ function countScore(score){
 function playRound (playerSelection, computerSelection) {
     let player = playerSelection.toLowerCase();
     let computer = computerSelection.toLowerCase();
+    return[player, computer];
+    
+}
+
+function evaluateWinner(){
     switch (true) {
         
         case player == "rock" && computer == "scissors":
