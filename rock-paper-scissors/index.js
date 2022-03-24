@@ -36,12 +36,13 @@ function countScore(score){
 }
 
 function playRound (e) {
-    const player = playerSelection(e);
-    const computer = computerSelection();
-    const result = evaluateWinner(player, computer);
-    countScore(result[1]);
-    displayWinner();
-    return result;
+    if(scoreBoard.hidden === false){
+        const player = playerSelection(e);
+        const computer = computerSelection();
+        const result = evaluateWinner(player, computer);
+        countScore(result);
+        displayWinner();
+    }
 }
 
 function displayWinner(){
@@ -82,24 +83,21 @@ function computerSelection(){
 }
 
 function playerSelection(e) {
-    return e.currentTarget.innerText;
+    return e.currentTarget.id;
 }
 
 function evaluateWinner(player, computer){
     switch (true) {
-        
         case player == "Rock" && computer == "Scissors":
-            return [`You won! ${player} beats ${computer}.`, 1]; 
-
+            return 1;
         case player == "Paper" && computer == "Rock":
-            return [`You won! ${player} beats ${computer}.`, 1]; 
-
+            return 1;
         case player == "Scissors" && computer == "Paper":
-            return [`You won! ${player} beats ${computer}.`, 1]; 
+            return 1; 
         case player == computer:
-            return [`That is a tie. ${player} against ${computer}.`, 2];
+            return 2;
         default:
-            return [`You lost! ${computer} beats ${player}!`, 0];
+            return 0;
     }
 }
 

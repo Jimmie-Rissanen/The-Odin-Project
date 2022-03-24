@@ -1,18 +1,25 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
 body {
     margin:0;
     padding:0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-style: oblique;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+    font-weight: 300;
 }
 wrapper {
     display:flex;
     flex-direction:column;
     align-items: center;
+    justify-content: center;
     background-color:whitesmoke;
     height:100vh;
+    background: #50a3a2;
+    background: -webkit-linear-gradient(top left, #78cac9 0%, #0ec97b 100%);
+    background: -moz-linear-gradient(top left, #092fd6 0%, #53e3a6 100%);
+    background: -o-linear-gradient(top left, #8df1f0 0%, #53e3a6 100%);
+    background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%); 
 }
 main {
-   background-color: whitesmoke;
    max-width: 80vw;
 }
 .choose {
@@ -20,28 +27,47 @@ main {
     flex-direction: row;
 }
 .card {
+    background-color: white;
     height: 200px;
     width: 200px;
     margin: 20px;
-    font-size: large;
-    border-radius: 20px;
-    background-color: mistyrose;
+    color:#53e3a6;
+    font-size: x-large;
+    border: none;
+    border-radius: 3px;
 }
 .card:hover {
-    background-color: rgb(111, 172, 230);
+    background-color:#53e3a6;
+    color: white; 
 }
-.highlight {
-    background-color: rgb(241, 139, 139);
-}
+
 .displayResultArea {
     height: 200px;
     width:300;
     font-size:larger;
 }
 
+.gameButton {
+    color: #53e3a6;
+    font-size: large;
+    border: none;
+    border-radius: 3px;
+    background-color: white;
+    width: 250px;
+    opacity: 600%;
+    height: 70px;
+}
+
+.gameButton:hover {
+  width: 300px;
+  height: 80px;
+}
+
 .scoreBoard {
     width: 200px;
-    height: 200px;
+    background-color: white;
+    color:#53e3a6;
+
 }
 .container {
     display:flex;
@@ -51,5 +77,14 @@ main {
 header {
     width:100vw;
     height:100px;
-    background-color: mistyrose;
+    font-size:x-large;
+}
+
+.icon {
+    fill:#53e3a6;
+    height:50px;
+}
+
+.card:hover .icon{
+    fill: white;
 }
