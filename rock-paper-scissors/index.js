@@ -1,13 +1,76 @@
 const chooseButton = document.querySelectorAll('.card');
-chooseButton.forEach(button => button.addEventListener('click', displayResult));
+chooseButton.forEach(button => button.addEventListener('click', playRound));
 
 const displayResultArea = document.querySelector('.displayResultArea');
 
-const gameStartButton = document.querySelector('.gameStartButton');
-gameStartButton.addEventListener('click', displayResult);
+const gameStartButton = displayResultArea.querySelector('.gameStartButton');
+gameStartButton.addEventListener('click', startTheGame);
 
-// Make a random output 
-function computerPlay(){
+const scoreBoard = displayResultArea.querySelector('.scoreBoard');
+
+const yourScore = scoreBoard.querySelector('.yourScore').childNodes[3];
+const computerScore = scoreBoard.querySelector('.computerScore').childNodes[3];
+
+const winner = document.createElement('h2');
+const playAgainButton = document.createElement('button');
+playAgainButton.classList.add('gameButton');
+playAgainButton.addEventListener('click', newGame)
+
+function startTheGame(){
+    displayResult();
+}
+
+function displayResult(){
+    if(displayResultArea.contains(gameStartButton)){
+        displayResultArea.removeChild(gameStartButton);
+        scoreBoard.removeAttribute('hidden');
+    }
+}
+
+function countScore(score){
+    if(score === 1){
+       yourScore.innerText = parseInt(yourScore.innerText) + 1;
+    } else if(score === 0){
+        computerScore.innerText = parseInt(computerScore.innerText) + 1;
+    }
+}
+
+function playRound (e) {
+    const player = playerSelection(e);
+    const computer = computerSelection();
+    const result = evaluateWinner(player, computer);
+    countScore(result[1]);
+    displayWinner();
+    return result;
+}
+
+function displayWinner(){
+    if(yourScore.innerText == 5){
+        createWinnerDiv('You won!');
+    } else if (computerScore.innerText == 5){
+        createWinnerDiv('The computer won!');
+    }
+}
+
+function createWinnerDiv(winnerText){
+    if(displayResultArea.contains(scoreBoard)){
+        displayResultArea.removeChild(scoreBoard);
+    }
+    winner.innerText = winnerText;
+    displayResultArea.appendChild(winner);
+    playAgainButton.innerText = 'Play another round?';
+    displayResultArea.appendChild(playAgainButton);
+}
+
+function newGame(){
+    displayResultArea.removeChild(playAgainButton);
+    displayResultArea.removeChild(winner);
+    yourScore.innerText = 0;
+    computerScore.innerText = 0;
+    displayResultArea.appendChild(scoreBoard);
+}
+
+function computerSelection(){
     let randomNumber = Math.floor(Math.random() * 3);
     if (randomNumber === 0) {
         return "Rock";
@@ -18,33 +81,20 @@ function computerPlay(){
     }
 }
 
-function displayResult(e){
-       
+function playerSelection(e) {
+    return e.currentTarget.innerText;
 }
 
-function countScore(score){
-    
-}
-
-// Make one round and evaluate the winner and return an array with a message and a number for keeping score.
-
-function playRound (playerSelection, computerSelection) {
-    let player = playerSelection.toLowerCase();
-    let computer = computerSelection.toLowerCase();
-    return[player, computer];
-    
-}
-
-function evaluateWinner(){
+function evaluateWinner(player, computer){
     switch (true) {
         
-        case player == "rock" && computer == "scissors":
+        case player == "Rock" && computer == "Scissors":
             return [`You won! ${player} beats ${computer}.`, 1]; 
 
-        case player == "paper" && computer == "rock":
+        case player == "Paper" && computer == "Rock":
             return [`You won! ${player} beats ${computer}.`, 1]; 
 
-        case player == "scissors" && computer == "paper":
+        case player == "Scissors" && computer == "Paper":
             return [`You won! ${player} beats ${computer}.`, 1]; 
         case player == computer:
             return [`That is a tie. ${player} against ${computer}.`, 2];
