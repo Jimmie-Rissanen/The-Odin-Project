@@ -1,9 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
+/*Main section styling*/
 body {
     margin:0;
     padding:0;
     font-family: 'Source Sans Pro', sans-serif;
-    color: white;
+    color:#53e3a6;
     font-weight: 300;
 }
 wrapper {
@@ -19,100 +20,59 @@ wrapper {
     background: -o-linear-gradient(top left, #8df1f0 0%, #53e3a6 100%);
     background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%); 
 }
-main {
-   max-width: 80vw;
+main{
+    width: 80vw;
 }
-.choose {
-    display: flex;
-    flex-direction: row;
+/*Styling of containers*/
+.container{
+    display:flex;
+    flex-direction: column;
 }
-.card {
+.division{
     background-color: white;
-    height: 200px;
-    width: 200px;
-    margin: 20px;
-    color:#53e3a6;
-    font-size: x-large;
-    border: none;
-    border-radius: 3px;
-}
-.card:hover {
-    background-color:#53e3a6;
-    color: white; 
-}
-
-.displayResultArea {
-    height: 200px;
-    width:300;
-    font-size:larger;
-    background-color: white;
-    margin: 20px;
-}
-
-.gameButton {
-    color: white;
-    font-size: large;
-    border: none;
-    border-radius: 3px;
-    background-color: #53e3a6;
-    width: 250px;
-    opacity: 600%;
-    height: 70px;
-}
-
-.gameButton .icon {
-    fill: white;
-}
-
-.winner {
-    color:#53e3a6;
-    text-align: center;
-}
-
-
-.scoreBoard {
-    width: 100%;
-    background-color: white;
-    color:#53e3a6;
-}
-
-.score{
-    font-size:40px;
-    display: flex;
-}
-
-.score p {
-    padding: 20px;
-}
-.container {
+    height: 100px;
+    margin: 5px;
     display:flex;
     justify-content: center;
     align-items: center;
+    border-radius: 4px;
+}
+.card{
+    background-color: white;
+    border: none;
 }
 
-.container .hide{
+.hide{
     display: none;
 }
-header {
-    margin: 20px;
-    padding: 5px;
-    background-color: white;
-    border-radius: 3px;
-    color:#53e3a6;
-    font-size:x-large;
-}
 
-.icon {
+/*Icon and button styling*/
+.icon{
+    height: 50px;
     fill:#53e3a6;
-    height:50px;
 }
-
+.card:hover{
+    background-color: #53e3a6;
+}
 .card:hover .icon{
-    fill: white;
+    fill:white;
+}
+.division:hover{
+    background-color: #53e3a6;
+    color:white;
+}
+.division:hover .icon{
+   fill:#53e3a6;
+}
+.gameButton{
+    background-color: white;
+    border: none;
+    width:200px;
+    border-radius:4px;
 }
 
-
-@media  screen and (max-width: 640px) {
+/*
+ @media  screen and (max-width: 640px) {
     main{
         max-width:100vw;
         max-height:100vh;

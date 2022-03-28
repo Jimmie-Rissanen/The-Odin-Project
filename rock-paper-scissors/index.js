@@ -12,9 +12,6 @@ const yourScore = scoreBoard.querySelector('.yourScore').childNodes[3];
 const computerScore = scoreBoard.querySelector('.computerScore').childNodes[3];
 
 const winner = document.querySelector('.winner');
-const winnerText = document.createElement('h2');
-winner.insertAdjacentElement('afterbegin',winnerText);
-winner.classList.add('winner');
 const playAgainButton = document.querySelector('.playAgainButton');
 playAgainButton.addEventListener('click', newGame)
 
