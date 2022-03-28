@@ -12,9 +12,10 @@ const yourScore = scoreBoard.querySelector('.yourScore').childNodes[3];
 const computerScore = scoreBoard.querySelector('.computerScore').childNodes[3];
 
 const winner = document.createElement('h2');
-const playAgainButton = document.createElement('button');
-playAgainButton.classList.add('gameButton');
+winner.classList.add('scoreBoard');
+const playAgainButton = document.querySelector('.playAgainButton');
 playAgainButton.addEventListener('click', newGame)
+
 
 function startTheGame(){
     displayResult();
@@ -23,7 +24,7 @@ function startTheGame(){
 function displayResult(){
     if(displayResultArea.contains(gameStartButton)){
         displayResultArea.removeChild(gameStartButton);
-        scoreBoard.removeAttribute('hidden');
+        scoreBoard.classList.remove('hide');
     }
 }
 
@@ -36,7 +37,7 @@ function countScore(score){
 }
 
 function playRound (e) {
-    if(scoreBoard.hidden === false){
+    if(scoreBoard.classList.contains('hide') === false){
         const player = playerSelection(e);
         const computer = computerSelection();
         const result = evaluateWinner(player, computer);
@@ -59,17 +60,18 @@ function createWinnerDiv(winnerText){
     }
     winner.innerText = winnerText;
     displayResultArea.appendChild(winner);
-    playAgainButton.innerText = 'Play another round?';
-    displayResultArea.appendChild(playAgainButton);
+    playAgainButton.classList.remove('hide')
 }
 
 function newGame(){
-    displayResultArea.removeChild(playAgainButton);
     displayResultArea.removeChild(winner);
+    playAgainButton.classList.add('hide')
     yourScore.innerText = 0;
     computerScore.innerText = 0;
     displayResultArea.appendChild(scoreBoard);
 }
+
+// Game logic. Player and computer selection.
 
 function computerSelection(){
     let randomNumber = Math.floor(Math.random() * 3);

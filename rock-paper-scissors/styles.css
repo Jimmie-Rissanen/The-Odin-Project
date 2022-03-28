@@ -45,38 +45,54 @@ main {
     height: 200px;
     width:300;
     font-size:larger;
+    background-color: white;
+    margin: 20px;
 }
 
 .gameButton {
-    color: #53e3a6;
+    color: white;
     font-size: large;
     border: none;
     border-radius: 3px;
-    background-color: white;
+    background-color: #53e3a6;
     width: 250px;
     opacity: 600%;
     height: 70px;
 }
 
-.gameButton:hover {
-  width: 300px;
-  height: 80px;
+.gameButton .icon {
+    fill: white;
 }
 
 .scoreBoard {
-    width: 200px;
+    width: 100%;
     background-color: white;
     color:#53e3a6;
+}
 
+.score{
+    font-size:40px;
+    display: flex;
+}
+
+.score p {
+    padding: 20px;
 }
 .container {
     display:flex;
     justify-content: center;
     align-items: center;
 }
+
+.container .hide{
+    display: none;
+}
 header {
-    width:100vw;
-    height:100px;
+    margin: 20px;
+    padding: 5px;
+    background-color: white;
+    border-radius: 3px;
+    color:#53e3a6;
     font-size:x-large;
 }
 
