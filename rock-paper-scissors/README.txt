@@ -1,0 +1,3 @@
+This is a game of rock, paper and scissors that uses minimal text to communicate the flow. I wanted to make it as easy as possible to understand what to do with as little information as possible. 
+
+I soon realized that this is something that could take me forever to perfect. Since I do this manly to learn the basics I decided that this is good enough for now. I had some issues with font awesome, and had to embed the icons as svg:s, which looks very messy. But apart from that, I'm happy with it.  
