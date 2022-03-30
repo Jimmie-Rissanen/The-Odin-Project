@@ -5,43 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch a sketch</title>
+    <link href="./index.css" rel="stylesheet"></link>
 </head>
 <body>
-<main class="wrapper center">
-    <section class="display center">
+<header class="center">
+</header>
+    <main class="display center">
         <section class="sketch">
-
         </section>
-    </section>
-</main>
-<style>
-    body{
-        padding:0;
-        margin:0;
-    }
-    .wrapper{
-        background-color: blueviolet;
-        height:100vh;
-        width: 100vw;
-    }
-    .display{
-        height:600px;
-        width: 600px;
-        background-color: aquamarine;
-    }
-    .sketch{
-        height:300px;
-        width: 300px;
-        background-color: bisque;
-    }
-    .center{
-        display:flex;
-        justify-content: center;
-        align-items: center;
-    }
-</style>
-<script>
-    console.log('it works')
-</script>
+        <section class="inputs">
+            <input type="button" name="eraser" class="button eraser" value="Eraser">
+            <input type="button" name="clear" class="button clear" value="Clear sketch">
+            <input type="color" name ="color" class="button color">
+            <input type="range" name="range" id="range" class="range" min="4" max="64" step="1">
+            <lable for="range">value</lable>
+        </section>
+    </main>
+<script src="./index.js"></script>
 </body>
 </html>
