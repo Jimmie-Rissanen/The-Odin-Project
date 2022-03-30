@@ -14,6 +14,7 @@ body {
     height:70%;
     width: 100%;
     background-color: white;
+    display: grid;
 }
 .inputs{
     display: flex;
