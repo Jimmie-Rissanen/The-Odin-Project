@@ -23,6 +23,9 @@ eraser.addEventListener('click', erase);
 const paintButton = document.querySelector('.paint');
 paintButton.addEventListener('click', () => paint(colorButton.value));
 
+let mouseDown = false;
+document.body.onmousedown = () => mouseDown = true;
+document.body.onmouseup = () => mouseDown = false;
 
 function updateGrid(){
     removeAllChildren(sketch);
@@ -52,7 +55,7 @@ function makeElements(){
 
 function paint(colorToUse){
     const gridItems = document.querySelectorAll('.gridItem');
-    gridItems.forEach(item => item.addEventListener('mouseover', (e)=>{
+    gridItems.forEach(item => item.addEventListener('mousedown', (e)=>{
         e.currentTarget.style.backgroundColor = colorToUse;
     }));
 }
