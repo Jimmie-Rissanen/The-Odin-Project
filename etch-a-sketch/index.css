@@ -1,6 +1,6 @@
  /*Main styling and containers*/
 body {
-     background: repeating-linear-gradient(45deg, #311e9b, #4b96c8 30px,  #29668A 15px, #29668A 30px);
+    background: repeating-linear-gradient(45deg, #4BC87F, #4BC87F 15px,  #29668A 0, #29668A 30px);
     margin: 0;
     padding: 0;
 }

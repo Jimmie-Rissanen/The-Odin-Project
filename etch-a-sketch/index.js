@@ -8,19 +8,33 @@ const range = document.querySelector('.range');
 window.addEventListener('load', loadGrid);
 range.addEventListener('change', updateGrid);
 
+const colorButton = document.querySelector('.color');
+colorButton.addEventListener('input', (e)=> {
+    colorButton.value = (e.currentTarget.value)
+    paint(colorButton.value); 
+});
+
+const clearSketch = document.querySelector('.clear');
+clearSketch.addEventListener('click', updateGrid);
+
+const eraser = document.querySelector('.eraser');
+eraser.addEventListener('click', erase);
+
+const paintButton = document.querySelector('.paint');
+paintButton.addEventListener('click', () => paint(colorButton.value));
 
 
 function updateGrid(){
     removeAllChildren(sketch);
     createGrid();
     makeElements();
-    eventListeners();
+    paint(colorButton.value);
 }
 
 function loadGrid(){
     createGrid();
     makeElements();
-    eventListeners();
+    paint(colorButton.value);
 }
 
 function createGrid(){
@@ -36,12 +50,15 @@ function makeElements(){
     }
 }
 
-function eventListeners(){
+function paint(colorToUse){
     const gridItems = document.querySelectorAll('.gridItem');
-    const color = document.querySelector('.color').value;
     gridItems.forEach(item => item.addEventListener('mouseover', (e)=>{
-        e.currentTarget.style.backgroundColor = color;
+        e.currentTarget.style.backgroundColor = colorToUse;
     }));
+}
+
+function erase(){
+    paint('#ffffff');
 }
 
 function listenForScreenSize(){
