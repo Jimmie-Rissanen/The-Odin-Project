@@ -1,29 +1,23 @@
 const gridSizeRange = document.querySelector('.range');
-window.addEventListener('resize', listenForScreenSize);
-window.addEventListener('load', listenForScreenSize);
-
 const sketch = document.querySelector('.sketch');
-
 const range = document.querySelector('.range');
-window.addEventListener('load', loadGrid);
-range.addEventListener('change', updateGrid);
-
 const colorButton = document.querySelector('.color');
+const clearSketch = document.querySelector('.clear');
+const eraser = document.querySelector('.eraser');
+const paintButton = document.querySelector('.paint');
+const label = document.querySelector('.label');
+let mouseDown = false;
+
+window.addEventListener('load', loadGrid);
+range.addEventListener('input', updateGrid);
 colorButton.addEventListener('input', (e)=> {
     colorButton.value = (e.currentTarget.value)
     paint(colorButton.value); 
 });
-
-const clearSketch = document.querySelector('.clear');
 clearSketch.addEventListener('click', updateGrid);
-
-const eraser = document.querySelector('.eraser');
 eraser.addEventListener('click', erase);
-
-const paintButton = document.querySelector('.paint');
 paintButton.addEventListener('click', () => paint(colorButton.value));
 
-let mouseDown = false;
 document.body.onmousedown = () => mouseDown = true;
 document.body.onmouseup = () => mouseDown = false;
 
@@ -31,6 +25,7 @@ function updateGrid(){
     removeAllChildren(sketch);
     createGrid();
     makeElements();
+    changeLabelValue();
     paint(colorButton.value);
 }
 
@@ -38,6 +33,10 @@ function loadGrid(){
     createGrid();
     makeElements();
     paint(colorButton.value);
+}
+
+function changeLabelValue(){
+    label.innerText = `${range.value} / ${range.value}`;
 }
 
 function createGrid(){
@@ -55,21 +54,13 @@ function makeElements(){
 
 function paint(colorToUse){
     const gridItems = document.querySelectorAll('.gridItem');
-    gridItems.forEach(item => item.addEventListener('mousedown', (e)=>{
-        e.currentTarget.style.backgroundColor = colorToUse;
+    gridItems.forEach(item => item.addEventListener('mouseover', (e)=>{
+        mouseDown ? e.currentTarget.style.backgroundColor = colorToUse:null;
     }));
 }
 
 function erase(){
     paint('#ffffff');
-}
-
-function listenForScreenSize(){
-    if(window.innerWidth >= 700){
-        gridSizeRange.setAttribute('orient', 'vertical');
-    } else if(window.innerWidth < 700){
-        gridSizeRange.setAttribute('orient', 'horizontal');
-    }
 }
 
 function removeAllChildren(element){
