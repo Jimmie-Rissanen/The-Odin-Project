@@ -25,8 +25,9 @@ function capture(e){
 function equals(list){
     const [a,b] = list;
     console.log(a,b)
-    savedValues = [];
-    displayValues(currentOperator(a,b));
+    const result = currentOperator(a,b);
+    savedValues.push(result)
+    displayValues(result);
 }
 
 

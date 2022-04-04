@@ -10,7 +10,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url(./hipstertext.txt);
+    background: url(./images/math-background.jpg);
 }
 .calculatorInterface{
     height: 30rem;
