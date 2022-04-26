@@ -26,10 +26,17 @@ function equals(list){
     const [a,b] = list;
     console.log(a,b)
     const result = currentOperator(a,b);
-    savedValues.push(result)
+    savedValues = [];
+    currentValue = result;
     displayValues(result);
 }
 
+function clear(){
+    currentValue = '';
+    currentOperator = null;
+    savedValues = [];
+    displayValues(currentValue);
+}
 
 function operate(e){
     savedValues.push(parseInt(currentValue));
@@ -48,10 +55,13 @@ function operate(e){
                 currentOperator = multiply;
                 break;
         case 'percent':
-                currentOperator = percent;
+                percent(savedValues[0]);
                 break;
         case 'equals':
             equals(savedValues);
+            break;
+        case 'clear':
+            clear();
             break;
         default:
             break;
@@ -61,13 +71,14 @@ function operate(e){
 const add = (a,b) => a + b;
 const subtract = (a,b) => a - b;
 const multiply = (a,b) => a * b;
-const divide = (a,b) => { 
-    if(a === 0 || b === 0){
-        return 'Error, 0 division';
-    }
-    return a / b;
+const divide = (a,b) => a / b;
+const percent = (a) => {
+    const result = a / 100;
+    savedValues = [];
+    currentValue = result;
+    savedValues.push(result);
+    displayValues(result);
 }
-const percent = (a) => a / 100;
 
 
 function displayValues(value){
