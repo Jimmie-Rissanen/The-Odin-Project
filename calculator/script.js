@@ -11,7 +11,7 @@ let savedValues = [];
 let currentOperator;
 
 operators.forEach(item => item.addEventListener('mousedown', operate));
-numbers.forEach(item => item.addEventListener('click', capture));
+numbers.forEach(item => item.addEventListener('mousedown', capture));
 greek.forEach(button => button.addEventListener('mousedown', displayGreek));
 
 
