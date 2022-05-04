@@ -1,0 +1,112 @@
+@font-face {
+    font-family: 'Norse-Bold';
+    src: url('./fonts/Norse-Bold.otf');
+}
+:root{
+    --width-of-image: 600px;
+    --main-background-color: rgb(235, 244, 235);
+    --green: #287225;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.image-section {
+    background-image: url(./images/ferns.jpg);
+    background-size: cover;
+    height: 100vh;
+    width: var(--width-of-image);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo-div {
+    width: var(--width-of-image);
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: 35vh;
+    font-size: 3.5em;
+    font-family: 'Norse-Bold';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-div img {
+    height: 2em;
+}
+.form-section{
+    background-color: white;
+    padding-left: 50px;
+    padding-top: 20px;
+    box-shadow: 0px 3px 7px grey;
+}
+main {
+    height: 100vh;
+    background-color: var(--main-background-color);
+}
+header {
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    margin: 50px 50px 0 50px;
+}
+form {
+    display: flex;
+    height:30vh;
+}
+footer {
+    margin-top: 40px;
+    margin-left: 50px;
+}
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+input {
+    width: 20vw;
+    height: 2.7em;
+    border-radius: 5px;
+    margin: 5px;
+}
+button {
+    background-color: var(--green);
+    border: none;
+    color: white;
+    width: 20em;
+    height: 3em;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 1em;
+}
+h3 {
+    padding: 10px 0 10px 0;
+    font-size: 1.5em;
+}
+.login-link {
+    color: var(--green)
+}
+.login-link :hover {
+    color: white;
+}
+.login-link :visited {
+    color: var(--green)
+}
+.password-input:required{
+    border-color: red;
+}
+
+.image-section a{
+    color: white;
+}
+.image-section a:hover {
+    color: white;
+}
+.image-section a:visited {
+    color: white;
+}
