@@ -1,3 +1,29 @@
 body {
-    background-color: red;
+  background-color: rosybrown;
+  margin: 0;
+  font-family: monospace;
+  text-align: center;
+}
+
+nav {
+  background-color: rosybrown;
+  font-size: 3em;
+}
+
+.add-book-button {
+  height: 100px;
+  width: 200px;
+  font-size: 1.5em;
+}
+
+.book-card {
+  height: 300px;
+  width: 200px;
+  background-color: #e9e9ed;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.book-card-remove {
+  background-color: palevioletred;
 }
