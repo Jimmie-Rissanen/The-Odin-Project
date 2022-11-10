@@ -9,6 +9,11 @@ nav {
   background-color: rosybrown;
   font-size: 3em;
 }
+#main-content {
+  display: flex;
+  margin: 60px;
+  justify-content: center;
+}
 
 .add-book-button {
   height: 100px;

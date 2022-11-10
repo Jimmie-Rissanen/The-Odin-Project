@@ -1,6 +1,10 @@
 //Selectors
-const mainContentArea = document.getElementById("mainContent");
+const mainContentArea = document.getElementById("main-content");
+const addBookButton = document.querySelector(".add-book-button");
 
+// Event listeners
+mainContentArea.addEventListener("change", displayCards);
+addBookButton.addEventListener("click", (e) => console.log(e.target));
 // library
 let myLibrary = [
   { name: "janneboken", author: "jan banan", pages: 5, read: true },
@@ -34,8 +38,18 @@ Book.prototype.Remove = function (libraryObject) {};
 
 // Add a function that creates cards with user input
 
-const card = document.createElement("div");
-card.classList.add("book-card");
-document.body.appendChild(card);
+function displayCards() {
+  myLibrary.forEach((book) => {
+    const card = document.createElement("div");
+    card.classList.add("book-card");
+    card.textContent = book.author;
+    mainContentArea.appendChild(card);
+  });
+}
 
+function createCard() {}
+
+function addBook() {}
+
+displayCards();
 // Add a way to display the cards
