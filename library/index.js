@@ -1,10 +1,12 @@
 //Selectors
 const mainContentArea = document.getElementById("main-content");
 const addBookButton = document.querySelector(".add-book-button");
-
+const modal = document.querySelector(".modal");
+const cancelButton = document.querySelector(".cancel-button");
 // Event listeners
 mainContentArea.addEventListener("change", displayCards);
-addBookButton.addEventListener("click", (e) => console.log(e.target));
+addBookButton.addEventListener("click", showBookModal);
+cancelButton.addEventListener("click", hideBookModal);
 // library
 let myLibrary = [
   { name: "janneboken", author: "jan banan", pages: 5, read: true },
@@ -48,6 +50,15 @@ function displayCards() {
 }
 
 function createCard() {}
+
+// Hide and show the modal with display attribute
+function showBookModal() {
+  modal.style.display = "flex";
+}
+
+function hideBookModal() {
+  modal.style.display = "flex";
+}
 
 function addBook() {}
 
